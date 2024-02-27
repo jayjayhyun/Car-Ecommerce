@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="login.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-shadow"></div>
+    <div class="container">
+        <div class="wrap">
+            <div class="headings">
+                <a id="sign-in" href="#" class="active"><span>Log In</span></a>
+                <a id="sign-up" href="#"><span>Sign Up</span></a>
+            </div>
+            <div id="sign-in-form">
+                <form method="post" action="/index">
+                    <label for="username">Username</label>
+                    <input id="username" type="text" name="username" placeholder="Username" required/>
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="password" placeholder="Password" required/>
+                    <input id="remember" type="checkbox"/>
+                    <label for="remember" id="rlabel">Keep me Signed in</label>
+                    <input type="submit" class="button" name="submit" value="Sign in"/>
+                    <p th:if="${error}" class="error" style="color: red" th:text="${error}"></p>
+                </form>
+
+                <footer>
+                    <div class="hr"></div>
+                    
+                    <!-- Display error message if present -->
+                </footer>
+            </div>
+            <div id="sign-up-form">
+                <form>
+                    <label for="username">Username</label>
+                    <input type="text" name="username"/>
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="password"/>
+                    <label for="password0">Re-Enter Password</label>
+                    <input id="password0" type="password" name="password0"/>
+                    <input type="submit" class="button" name="submit" value="Create Account"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
